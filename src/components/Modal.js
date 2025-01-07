@@ -8,6 +8,7 @@ const Modal = ({ isOpen, onClose, children }) => {
       onClose();
     }
   };
+  //i am deplotyinf
 
   return (
     <div 
