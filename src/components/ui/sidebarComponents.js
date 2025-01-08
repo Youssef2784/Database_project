@@ -27,7 +27,7 @@ export function useSidebar() {
 export function Sidebar({ children }) {
   const { isOpen } = useSidebar();
   return (
-    <div className={`sidebar ${isOpen ? 'open' : 'closed'}`}>
+    <div className={`sidebar ${isOpen ? 'open' : 'closed'} pt-12 fixed top-0 left-0 h-full`}>
       {children}
     </div>
   );

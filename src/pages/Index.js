@@ -88,6 +88,21 @@ const Index = () => {
         setIsDarkMode(!isDarkMode);
       };
 
+      const getIcon = (key) => {
+        switch (key) {
+          case 'totalProducts':
+            return <Package className="h-6 w-6 text-primary" />;
+          case 'activeOrders':
+            return <ShoppingCart className="h-6 w-6 text-primary" />;
+          case 'totalWarehouses':
+            return <Warehouse className="h-6 w-6 text-primary" />;
+          case 'staffMembers':
+            return <Users className="h-6 w-6 text-primary" />;
+          default:
+            return null;
+        }
+      };
+
   return (
     <Layout isDarkMode={isDarkMode} toggleTheme={toggleTheme}>
       <div className="space-y-8">
@@ -110,7 +125,7 @@ const Index = () => {
                   <p className="text-2xl font-bold mt-1">{value}</p>
                 </div>
                 <div className="h-12 w-12 bg-primary/5 rounded-full flex items-center justify-center">
-                  <Package className="h-6 w-6 text-primary" />
+                {getIcon(key)}
                 </div>
               </div>
               <div className="mt-4">

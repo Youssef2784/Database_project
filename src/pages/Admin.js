@@ -90,13 +90,14 @@ export default function Admin() {
   }, []);
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+        <Layout isDarkMode={isDarkMode} toggleTheme={toggleTheme}>
+      <div className={`min-h-screen flex items-center justify-center ${isDarkMode ? 'bg-black' : 'bg-gray-50'} py-12 px-4 sm:px-6 lg:px-8`}>
         <div className="max-w-md w-full space-y-8">
           <div>
-            <h1 className="text-center text-3xl font-extrabold text-gray-900">
+            <h1 className={`text-center text-3xl font-extrabold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
               Admin Dashboard
             </h1>
-            <p className="mt-2 text-center text-sm text-gray-600">
+            <p className={`mt-2 text-center text-sm ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
               Please enter your password to continue
             </p>
           </div>
@@ -113,7 +114,7 @@ export default function Admin() {
                   required
                   value={passwordInput}
                   onChange={(e) => setPasswordInput(e.target.value)}
-                  className="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                  className={`appearance-none rounded-md relative block w-full px-3 py-2 border ${isDarkMode ? 'border-gray-600 bg-gray-800 text-white placeholder-gray-400' : 'border-gray-300 text-gray-900 placeholder-gray-500'} focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm`}
                   placeholder="Enter admin password"
                 />
               </div>
@@ -130,16 +131,9 @@ export default function Admin() {
           </form>
         </div>
       </div>
+      </Layout>
     );
   }
-
-  // --------------------------
-  // State for form fields
-  // --------------------------
-
-  // --------------------------
-  // Fetch relevant data for dropdowns
-  // --------------------------
 
 
   async function fetchParties() {

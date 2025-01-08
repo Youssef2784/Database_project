@@ -11,7 +11,7 @@ export default function Layout({ children, isDarkMode, toggleTheme }) {
     <SidebarProvider>
       <div className={`min-h-screen flex w-full ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-gradient-to-br from-gray-50 to-gray-100'}`}>
         <SidebarComponent isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
-        <main className="flex-1 p-8 animate-fade-in">
+        <main className="flex-1 p-8 ml-64 animate-fade-in">
           {children}
         </main>
       </div>

@@ -27,7 +27,7 @@ export default function SidebarComponent({ isDarkMode, toggleTheme }) {
 
   return (
     <Sidebar>
-      <SidebarContent>
+      <SidebarContent className="pt-4">
         <SidebarGroup>
           <SidebarGroupContent>
             <SidebarMenu>
