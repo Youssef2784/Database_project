@@ -375,7 +375,7 @@ FROM Party p
 JOIN Staff s ON p.Party_ID = s.Party_ID;
 
 40) DELETE FROM Product
-WHERE Category = 'Toys';
+WHERE Product_ID = 999;
 
 -- Member 5
 41) SELECT p.First_Name, p.Last_Name
