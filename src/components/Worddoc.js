@@ -352,8 +352,10 @@ JOIN Staff s ON p.Party_ID = s.Party_ID
 ORDER BY s.Salary DESC
 LIMIT 5;
 
-35) INSERT INTO Party (Party_ID, First_Name, Last_Name, Phone_Number, Email, Address)
-VALUES (102, 'John', 'Doe', '555-2222', 'john.doe@example.com', '456 Oak Street');
+35) SELECT Category, AVG(Unit_Price) AS Average_Price
+FROM Product
+GROUP BY Category
+ORDER BY Average_Price DESC;
 
 36) SELECT Warehouse_Name, Location, Capacity
 FROM Warehouse
